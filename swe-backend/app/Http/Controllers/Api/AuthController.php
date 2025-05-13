@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
-use App\Http\Requests\RegisterRequest;
-use App\Services\AuthService;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+
+use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Services\SneakerAuth\AuthService;
+use App\Http\Requests\SneakerAuth\LoginRequest;
+use App\Http\Requests\SneakerAuth\RegisterRequest;
 
 class AuthController extends Controller
 {

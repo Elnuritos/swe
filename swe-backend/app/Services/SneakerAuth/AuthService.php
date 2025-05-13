@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\SneakerAuth;
 
 use App\Actions\Auth\LoginUserAction;
 use App\Models\Sneaker\SneakerUser;
