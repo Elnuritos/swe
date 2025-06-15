@@ -106,7 +106,7 @@ php artisan migrate --seed
 
 ---
 ## Api
-* Check postman file
+* Check postman file url http://back-bortpress.ru/api
 
 ## License
 
