@@ -21,12 +21,14 @@ class StoreSneakerProductRequest extends FormRequest
      */
     public function rules(): array
     {
+
+
         return [
             'name' => ['required', 'string'],
             'description' => ['nullable', 'string'],
             'price' => ['required', 'numeric'],
             'color' => ['nullable', 'string'],
-            'size' => ['nullable', 'string'],
+            'size' => ['nullable','array'],
             'stock' => ['required', 'integer', 'min:0'],
             'image' => ['nullable', 'image', 'max:2048'],
             'category_ids' => ['required', 'array'],

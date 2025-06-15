@@ -19,7 +19,7 @@ class SneakerProductSeeder extends Seeder
                 'description' => 'High-quality sneaker with comfort fit and modern design.',
                 'price' => rand(50, 200),
                 'color' => fake()->safeColorName(),
-                'size' => fake()->randomElement(['38', '39', '40', '41', '42', '43', '44']),
+                'size' => [fake()->randomElement(['38', '39', '40', '41', '42', '43', '44'])],
                 'stock' => rand(0, 100),
             ]);
 

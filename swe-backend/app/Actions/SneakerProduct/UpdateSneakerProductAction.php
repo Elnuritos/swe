@@ -13,7 +13,6 @@ class UpdateSneakerProductAction
         $categoryIds = $data['category_ids'] ?? null;
 
         unset($data['image'], $data['category_ids']);
-
         $product->update($data);
 
         if ($image) {

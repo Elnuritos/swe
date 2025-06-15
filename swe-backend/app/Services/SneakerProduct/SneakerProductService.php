@@ -36,4 +36,10 @@ class SneakerProductService
     {
         ($this->delete)($product);
     }
+    public function show(SneakerProduct $product): SneakerProduct
+    {
+
+        return $product->load(['categories', 'images']);
+    }
+
 }

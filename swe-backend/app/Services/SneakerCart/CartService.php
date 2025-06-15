@@ -5,14 +5,16 @@ namespace App\Services\SneakerCart;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Sneaker\SneakerCart;
+use Illuminate\Support\Facades\Auth;
 
 class CartService
 {
     public function getOrCreateCart(Request $request): SneakerCart
     {
-        if ($request->user()) {
+
+        if (Auth::guard('sanctum')->user()) {
             return SneakerCart::firstOrCreate([
-                'sneaker_user_id' => $request->user()->id,
+                'sneaker_user_id' => Auth::guard('sanctum')->user()->id,
             ]);
         }
 

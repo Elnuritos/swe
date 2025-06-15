@@ -23,6 +23,11 @@ class SneakerCategoryService
         return ($this->list)();
     }
 
+    public function show(SneakerCategory $category): SneakerCategory
+    {
+        return $category;
+    }
+
     public function create(array $data)
     {
         return ($this->create)($data);

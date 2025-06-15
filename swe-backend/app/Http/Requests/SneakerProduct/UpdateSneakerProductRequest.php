@@ -22,14 +22,14 @@ class UpdateSneakerProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['sometimes', 'string'],
+            'name' => ['nullable', 'string'],
             'description' => ['nullable', 'string'],
-            'price' => ['sometimes', 'numeric'],
+            'price' => ['nullable', 'numeric'],
             'color' => ['nullable', 'string'],
-            'size' => ['nullable', 'string'],
-            'stock' => ['sometimes', 'integer', 'min:0'],
+            'size' => ['nullable', 'array'],
+            'stock' => ['nullable', 'integer', 'min:0'],
             'image' => ['nullable', 'image', 'max:2048'],
-            'category_ids' => ['sometimes', 'array'],
+            'category_ids' => ['nullable', 'array'],
             'category_ids.*' => ['integer', 'exists:sneaker_categories,id'],
         ];
     }

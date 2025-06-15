@@ -14,8 +14,8 @@ class CreateSneakerProductAction
         $categoryIds = $data['category_ids'] ?? [];
 
         unset($data['image'], $data['category_ids']);
-
         $product = SneakerProduct::create($data);
+
 
         if ($image) {
             $path = $image->store('sneakers', 'public');

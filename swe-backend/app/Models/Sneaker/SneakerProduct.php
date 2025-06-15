@@ -23,6 +23,7 @@ class SneakerProduct extends Model
     protected $casts = [
         'price' => 'decimal:2',
         'stock' => 'integer',
+        'size'  => 'array',
     ];
 
     public function images()
