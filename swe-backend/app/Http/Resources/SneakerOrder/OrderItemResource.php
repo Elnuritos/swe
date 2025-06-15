@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\SneakerCart;
+namespace App\Http\Resources\SneakerOrder;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\SneakerProduct\SneakerProductResource;
 
-class CartItemResource extends JsonResource
+class OrderItemResource extends JsonResource
 {
     public function toArray($request): array
     {
@@ -13,7 +13,7 @@ class CartItemResource extends JsonResource
             'id'       => $this->id,
             'product'  => new SneakerProductResource($this->product),
             'quantity' => $this->quantity,
-              'size'       => $this->size,
+            'price'    => $this->price,
         ];
     }
 }

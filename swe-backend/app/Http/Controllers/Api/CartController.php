@@ -10,7 +10,7 @@ use App\Models\Sneaker\SneakerCartItem;
 use App\Services\SneakerCart\CartService;
 use App\Actions\SneakerCart\GetCartAction;
 use App\Actions\SneakerCart\AddToCartAction;
-use App\Http\Requests\Cart\AddToCartRequest;
+use App\Http\Requests\SneakerCart\AddToCartRequest;
 use App\Actions\SneakerCart\RemoveFromCartAction;
 use App\Actions\SneakerCart\UpdateCartItemAction;
 use App\Http\Resources\SneakerCart\CartItemResource;
@@ -44,11 +44,15 @@ class CartController extends Controller
         $item = ($this->addToCart)(
             $cart,
             $request->validated()['product_id'],
-            $request->validated()['quantity']
+            $request->validated()['quantity'],
+            $request->validated()['size']
         );
+
+
 
         return response()->json(new CartItemResource($item), 201);
     }
+
 
     public function update(UpdateCartItemRequest $request, SneakerCartItem $item): JsonResponse
     {

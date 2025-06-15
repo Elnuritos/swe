@@ -17,7 +17,7 @@ class SneakerProductListRequest extends FormRequest
             'search'       => ['nullable', 'string'],
             'category_id'  => ['nullable', 'integer', 'exists:sneaker_categories,id'],
             'color'        => ['nullable', 'string'],
-            'size'         => ['nullable', 'string'],
+            'size'         => ['nullable', 'array'],
             'min_price'    => ['nullable', 'numeric'],
             'max_price'    => ['nullable', 'numeric'],
             'per_page'     => ['nullable', 'integer', 'min:1', 'max:100'],

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Cart;
+namespace App\Http\Requests\SneakerCart;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -16,6 +16,7 @@ class AddToCartRequest extends FormRequest
         return [
             'product_id' => ['required', 'integer', 'exists:sneaker_products,id'],
             'quantity'   => ['required', 'integer', 'min:1'],
+            'size'=>['required','array'],
         ];
     }
 }

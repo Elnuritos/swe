@@ -25,15 +25,23 @@ class SneakerProductController extends Controller
 
     public function store(StoreSneakerProductRequest $request): JsonResponse
     {
+
         $product = $this->service->create($request->validated());
         return response()->json(new SneakerProductResource($product), 201);
     }
 
     public function update(UpdateSneakerProductRequest $request, SneakerProduct $product): JsonResponse
     {
+
         $updated = $this->service->update($product, $request->validated());
         return response()->json(new SneakerProductResource($updated));
     }
+    public function show(SneakerProduct $product): JsonResponse
+    {
+        $product = $this->service->show($product);
+        return response()->json(new SneakerProductResource($product));
+    }
+
 
     public function destroy(SneakerProduct $product): JsonResponse
     {

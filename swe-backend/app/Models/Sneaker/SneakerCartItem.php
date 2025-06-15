@@ -15,10 +15,12 @@ class SneakerCartItem extends Model
         'sneaker_cart_id',
         'sneaker_product_id',
         'quantity',
+        'size',
     ];
 
     protected $casts = [
         'quantity' => 'integer',
+        'size'     => 'array',
     ];
 
     public function cart()

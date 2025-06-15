@@ -15,6 +15,8 @@ class SneakerOrder extends Model
         'sneaker_user_id',
         'sneaker_order_status_id',
         'total',
+        'sneaker_address_id',
+        'payment_email'
     ];
 
     protected $casts = [
@@ -34,5 +36,10 @@ class SneakerOrder extends Model
     public function items()
     {
         return $this->hasMany(SneakerOrderItem::class, 'sneaker_order_id');
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(SneakerAddress::class, 'sneaker_address_id');
     }
 }

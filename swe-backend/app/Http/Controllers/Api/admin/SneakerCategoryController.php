@@ -17,6 +17,18 @@ class SneakerCategoryController extends Controller
         protected SneakerCategoryService $service
     ) {}
 
+    public function index(): JsonResponse
+    {
+        $categories = $this->service->list();
+        return response()->json(SneakerCategoryResource::collection($categories));
+    }
+
+    public function show(SneakerCategory $category): JsonResponse
+    {
+        $category = $this->service->show($category);
+        return response()->json(new SneakerCategoryResource($category));
+    }
+
     public function store(StoreSneakerCategoryRequest $request): JsonResponse
     {
         $category = $this->service->create($request->validated());
